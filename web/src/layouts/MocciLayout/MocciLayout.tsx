@@ -11,16 +11,20 @@ const MocciLayout = ({ children }: MocciLayoutProps) => {
   return (
     <>
       <header>
-        <div className="flex-between">
-          <h1><Link to={routes.home()}>MocciPlanner</Link></h1>
-          {isAuthenticated ? (
-            <div>
-              <span>Logged in as {currentUser.email}</span>{' '}
-              <button type="button" onClick={logOut}>Logout</button>
+        <div>
+          <div className="grid place-items-center flex-wrap">
+            <h1 className="bg-blue-400 p-1 w-fit rounded-md font-bold"><Link to={routes.home()}>MocciPlanner</Link></h1>
+            <div className="flex">
+              {isAuthenticated ? (
+              <div>
+                <span>{currentUser.email}</span>{' '}
+                <button type="button" onClick={logOut}>Logout</button>
+              </div>
+            ) : (
+              <Link to={routes.login()}>Login</Link>
+            )}
             </div>
-          ) : (
-            <Link to={routes.login()}>Login</Link>
-          )}
+          </div>
         </div>
       </header>
       <main>{children}</main>

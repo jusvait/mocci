@@ -9,7 +9,7 @@ interface Props {
 const MocciCase = ({mocciCase}: Props) => {
   return (
     <article key={mocciCase.id}>
-    <header>
+    <header className="bg-blue-400 p-1 w-fit rounded-md">
       <Link to={routes.mocciCase({ id: mocciCase.id })}>{mocciCase.title}</Link>
     </header>
     <p>Participants:</p>
