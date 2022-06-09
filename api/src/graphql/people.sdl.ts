@@ -7,8 +7,8 @@ export const schema = gql`
   }
 
   type Query {
-    people: [Person!]! @requireAuth
-    person(id: Int!): Person @requireAuth
+    people: [Person!]! @skipAuth
+    person(id: Int!): Person @skipAuth
   }
 
   input CreatePersonInput {

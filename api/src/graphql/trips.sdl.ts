@@ -7,8 +7,8 @@ export const schema = gql`
   }
 
   type Query {
-    trips: [Trip!]! @requireAuth
-    trip(id: Int!): Trip @requireAuth
+    trips: [Trip!]! @skipAuth
+    trip(id: Int!): Trip @skipAuth
   }
 
   input CreateTripInput {
