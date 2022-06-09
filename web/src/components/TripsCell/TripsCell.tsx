@@ -1,6 +1,7 @@
 import type { TripsQuery } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
-
+import { Link, routes } from '@redwoodjs/router'
+import MocciCase from 'src/components/MocciCase'
 
 export const QUERY = gql`
   query TripsQuery {
@@ -28,16 +29,7 @@ export const Success = ({ trips }: CellSuccessProps<TripsQuery>) => {
   return (
     <>
       {trips.map((trip) => (
-        <article key={trip.id}>
-          <header>
-            <h2>{trip.title}</h2>
-          </header>
-          <p>Participants:</p>
-          {trip.participants.map((participant) => (
-            <p key={participant.id}>{participant.name}</p>
-          ))}
-          <div>Created at: {trip.createdAt}</div>
-        </article>
+       <MocciCase key={trip.id} mocciCase={trip}/>
       ))}
     </>
   )

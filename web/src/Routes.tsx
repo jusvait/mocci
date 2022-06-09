@@ -27,6 +27,7 @@ const Routes = () => (
       <Route path="/trips" page={TripTripsPage} name="trips" />
     </Set>
     <Set wrap={MocciLayout}>
+      <Route path="/mocci-case/{id:Int}" page={MocciCasePage} name="mocciCase" />
       <Route path="/" page={HomePage} name="home" />
       <Route notfound page={NotFoundPage} />
     </Set>
