@@ -7,14 +7,16 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route, Set } from '@redwoodjs/router'
+import MocciLayout from 'src/layouts/MocciLayout'
 
-const Routes = () => {
-  return (
-    <Router>
+const Routes = () => (
+  <Router>
+    <Set wrap={MocciLayout}>
+      <Route path="/" page={HomePage} name="home" />
       <Route notfound page={NotFoundPage} />
-    </Router>
-  )
-}
+    </Set>
+  </Router>
+)
 
 export default Routes
